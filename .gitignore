@@ -1,0 +1,14 @@
+node_modules
+dist
+.vercel
+.DS_Store
+*.local
+.env
+.env.*
+
+# scratch files from a build-time SSR test — safe to delete
+_smoke.jsx
+_smoke.mjs
+
+# vite temp files
+vite.config.js.timestamp-*
