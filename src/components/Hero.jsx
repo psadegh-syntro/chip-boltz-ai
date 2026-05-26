@@ -1,4 +1,5 @@
 import Reveal from "./Reveal.jsx";
+import DemoMenu from "./DemoMenu.jsx";
 
 /* Faint perspective grid behind the hero. */
 function GridBackdrop() {
@@ -114,14 +115,7 @@ export default function Hero() {
             <a className="btn btn--primary btn--lg" href="#contact">
               Talk to us about a design-partner engagement
             </a>
-            <a
-              className="btn btn--ghost btn--lg"
-              href="/chip-explorer.html"
-              target="_blank"
-              rel="noopener"
-            >
-              Explore the live demo
-            </a>
+            <DemoMenu />
           </div>
         </Reveal>
 
