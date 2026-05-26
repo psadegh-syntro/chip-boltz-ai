@@ -391,7 +391,10 @@
 }
 .deliv__demo {
   margin-top: 30px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 /* ===================== ENGINE — workload exploration ===================== */

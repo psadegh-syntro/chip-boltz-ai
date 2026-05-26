@@ -116,7 +116,7 @@ export default function Hero() {
             </a>
             <a
               className="btn btn--ghost btn--lg"
-              href="/explorer.html"
+              href="/chip-explorer.html"
               target="_blank"
               rel="noopener"
             >
