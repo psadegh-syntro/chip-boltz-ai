@@ -21,9 +21,9 @@ button{background:#2a313c;color:var(--text);border:1px solid var(--border);borde
 .small{color:var(--muted);font-size:11px}
 </style>
 <header><h1>Chip Explorer <span style="color:var(--accent)">v2.1.2.0</span></h1>
-<div class="tag">run_v212_prefill · prefill · CALIBRATED (A100/H100/MI300, ±18% throughput) · cumulative buildable library across 11 GCN iterations</div></header>
+<div class="tag">run_v212_prefill · prefill · throughput calibrated to ±18% vs A100/H100/MI300 · cumulative buildable library across 11 GCN iterations</div></header>
 <div style="background:#1d212a;border-bottom:1px solid var(--border);padding:8px 22px;color:var(--muted);font-size:12px">
-Every chip here passed the thermal / power-delivery / signal-integrity gates and is shown in <b style="color:var(--text)">calibrated units</b>. Drag a metric handle to filter; cross out a package value; the scatter and stats update live. Showing 6,000 of 105,157 buildable designs (Pareto frontier + stratified sample).</div>
+Every chip passed first-order <b style="color:var(--text)">thermal / power-delivery / signal-integrity feasibility gates</b> (reduced-order models). <b style="color:var(--text)">Throughput is calibrated to real silicon</b> (±18% vs A100/H100/MI300); power, area, cost and the gates are reduced-order — treat absolute non-throughput values as directional, calibration in progress. Drag a metric handle to filter; cross out a package value; the scatter and stats update live. Showing 6,000 of 105,157 buildable designs (Pareto frontier + stratified sample).</div>
 <main>
 <aside class="panel"><div style="display:flex;justify-content:space-between;align-items:center"><h2>Performance / cost filters</h2><div style="display:flex;gap:6px"><button id="dl" title="Export the currently-filtered designs to CSV">⬇ Download CSV</button><button id="reset">Reset</button></div></div>
 <div id="locks"></div>
