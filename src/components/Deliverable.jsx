@@ -20,19 +20,11 @@ export default function Deliverable() {
         <Reveal className="deliv__demo">
           <a
             className="btn btn--primary btn--lg"
-            href="/chip-explorer.html"
+            href="/chip-explorer-v212.html"
             target="_blank"
             rel="noopener"
           >
             Open the chip explorer →
-          </a>
-          <a
-            className="btn btn--ghost btn--lg"
-            href="/chiplet-explorer.html"
-            target="_blank"
-            rel="noopener"
-          >
-            Open the chiplet explorer →
           </a>
         </Reveal>
       </div>
