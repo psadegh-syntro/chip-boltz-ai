@@ -22,9 +22,12 @@ export default function Footer() {
             <a href="https://boltz-ai.com">boltz-ai.com</a>
           </p>
           <p className="footer__fine">
-            © {new Date().getFullYear()} Boltz AI. Figures on this page come
-            from an analytical performance model — a methodology
-            demonstration, not measured silicon.
+            © {new Date().getFullYear()} Boltz AI. Figures come from an
+            analytical performance model calibrated to published A100 / H100 /
+            MI300 specs (throughput ±18%; thermal gate validated against real
+            junction temperatures; power-delivery, signal-integrity and cost
+            remain reduced-order) — a methodology demonstration, not measured
+            silicon.
           </p>
         </div>
       </div>

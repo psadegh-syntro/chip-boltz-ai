@@ -18,8 +18,9 @@ export default function Proof() {
 
         <Reveal>
           <p className="proof__caption mono">
-            Illustrative — based on an analytical performance model, not
-            measured silicon
+            Analytical performance model, calibrated to published A100 / H100 /
+            MI300 specs (throughput ±18%, thermal gate validated) — directional,
+            not yet measured silicon
           </p>
         </Reveal>
       </div>
