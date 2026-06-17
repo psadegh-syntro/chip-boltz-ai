@@ -25,7 +25,7 @@ button{background:#2a313c;color:var(--text);border:1px solid var(--border);borde
 <div style="background:#1d212a;border-bottom:1px solid var(--border);padding:8px 22px;color:var(--muted);font-size:12px">
 Every chip here passed the thermal / power-delivery / signal-integrity gates and is shown in <b style="color:var(--text)">calibrated units</b>. Drag a metric handle to filter; cross out a package value; the scatter and stats update live. Showing 6,000 of 105,157 buildable designs (Pareto frontier + stratified sample).</div>
 <main>
-<aside class="panel"><div style="display:flex;justify-content:space-between"><h2>Performance / cost filters</h2><button id="reset">Reset</button></div>
+<aside class="panel"><div style="display:flex;justify-content:space-between;align-items:center"><h2>Performance / cost filters</h2><div style="display:flex;gap:6px"><button id="dl" title="Export the currently-filtered designs to CSV">⬇ Download CSV</button><button id="reset">Reset</button></div></div>
 <div id="locks"></div>
 <h2 style="margin-top:14px">Topology &amp; package filters <span style="text-transform:none;font-weight:400;color:var(--muted)">(number = surviving chips with that value)</span></h2><div id="pk"></div></aside>
 <section class="panel"><div id="stats"></div>
@@ -110,5 +110,11 @@ scales:{x:{min:0,max:XMAX,title:{display:true,text:'cost ($) — axis fixed to f
 y:{min:0,max:YMAX,title:{display:true,text:'throughput (TFLOPS)',color:'#8a92a3'},ticks:{color:'#8a92a3'}}}}})}}
 function draw(){const s=filt();updateLocks();updatePk();renderStats(s);renderChamp(s);scatter(s)}
 document.getElementById('reset').addEventListener('click',()=>{M.forEach(m=>{lock[m.k].on=false;lock[m.k].t=m.d?lock[m.k].mn:lock[m.k].mx});PK.forEach(p=>crossed[p.k]=new Set());updatePk();draw()});
+document.getElementById('dl').addEventListener('click',()=>{const s=filt();
+const cols=[['th','throughput_tflops'],['pw','tflops_per_w'],['pa','tflops_per_mm2'],['la','latency_ms'],['co','cost_usd'],['po','power_w'],['ar','area_mm2'],['t','topology'],['cool','cooling_solution'],['pdn','pdn_option'],['asm','assembly_style'],['it','found_iter']];
+let csv=cols.map(c=>c[1]).join(',')+'\n';
+s.forEach(c=>{csv+=cols.map(c2=>c[c2[0]]).join(',')+'\n'});
+const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');
+a.href=URL.createObjectURL(blob);a.download=`chip_designs_${s.length}.csv`;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(a.href)});
 buildLocks();buildPk();draw();
 </script>
